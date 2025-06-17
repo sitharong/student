@@ -32,27 +32,36 @@ public class StudentRestController {
     }
 
     @PostMapping(value = "/new")
-    public StudentModel save(@Valid @RequestBody StudentModel book) {
-        return studentService.addStudent(book);
+    public StudentModel add(@Valid @RequestBody StudentModel book) {
+        var res = studentService.addStudent(book);
+        log.info("add student: {}", res);
+        return res;
     }
 
     @GetMapping(value = "/{id}")
     public StudentModel get(@PathVariable Long id) {
-        return studentService.getStudent(id);
+        var res = studentService.getStudent(id);
+        log.info("get student: {}", res);
+        return res;
     }
 
     @GetMapping(value = "/list")
-    public List<StudentModel> getBooks() {
-        return studentService.listStudents();
+    public List<StudentModel> list() {
+        var res = studentService.listStudents();
+        log.info("list students: {}", res);
+        return res;
     }
 
     @PutMapping(value = "/update")
-    public StudentModel update(@Valid @RequestBody StudentModel book) {
-        return studentService.updateStudent(book);
+    public StudentModel update(@Valid @RequestBody StudentModel newData) {
+        var res = studentService.updateStudent(newData);
+        log.info("update student: {} <-> {}", newData, res);
+        return res;
     }
 
     @DeleteMapping(value = "/delete/{id}")
     public void delete(@PathVariable Long id) {
         studentService.deleteStudent(id);
+        log.info("delete student {}", id);
     }
 }

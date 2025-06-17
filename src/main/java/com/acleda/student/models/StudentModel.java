@@ -6,10 +6,12 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name = "tbl_student")
 @Data
+@ToString(callSuper = true)
 public class StudentModel extends BaseModel {
 
     @NotBlank
