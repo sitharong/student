@@ -2,7 +2,6 @@ package com.acleda.student.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.acleda.student.models.StudentModel;
 import com.acleda.student.services.StudentService;
 
@@ -10,11 +9,7 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,30 +31,27 @@ public class StudentRestController {
         return "Hello World";
     }
 
-    @PostMapping(value = "/new", consumes = "application/json", produces = "application/json")
-    public StudentModel save(@Valid @RequestBody StudentModel book, BindingResult result) {
-        if (result.hasErrors()) {
-            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result.getAllErrors());
-        }
+    @PostMapping(value = "/new")
+    public StudentModel save(@Valid @RequestBody StudentModel book) {
         return studentService.addStudent(book);
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
+    @GetMapping(value = "/{id}")
     public StudentModel get(@PathVariable Long id) {
         return studentService.getStudent(id);
     }
 
-    @GetMapping(value = "/list", produces = "application/json")
+    @GetMapping(value = "/list")
     public List<StudentModel> getBooks() {
         return studentService.listStudents();
     }
 
-    @PutMapping(value = "/update", consumes = "application/json", produces = "application/json")
+    @PutMapping(value = "/update")
     public StudentModel update(@Valid @RequestBody StudentModel book) {
         return studentService.updateStudent(book);
     }
 
-    @DeleteMapping(value = "/delete/{id}", produces = "application/json")
+    @DeleteMapping(value = "/delete/{id}")
     public void delete(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }

@@ -1,5 +1,6 @@
 package com.acleda.student.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
@@ -13,10 +14,13 @@ public class StudentModel extends BaseModel {
 
     @NotBlank
     private String name;
+
     @NotBlank
     private String room;
-    @NotBlank(message = "Email must be not blank")
+
+    @NotBlank
     @Email
+    @Column(unique = true)
     private String email;
 
 }
