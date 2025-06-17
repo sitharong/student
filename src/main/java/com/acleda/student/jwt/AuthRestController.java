@@ -14,11 +14,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import com.acleda.student.utils.Constant;
-
 import jakarta.validation.Valid;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
 @RestController
@@ -53,8 +50,8 @@ public class AuthRestController {
         newUser.setEmail(userRequest.getEmail());
         newUser.setPassword(passwordEncoder.encode(userRequest.getPassword()));
         newUser.setRole(userRequest.getRole());
-        newUser.setCreatedAt(LocalDateTime.now());
-        newUser.setCreatedBy(Constant.SYSTEM);
+        // newUser.setCreatedAt(LocalDateTime.now());
+        // newUser.setCreatedBy(Constant.SYSTEM);
         UserModel savedUser = userRepository.save(newUser);
 
         // Authenticate user after registration

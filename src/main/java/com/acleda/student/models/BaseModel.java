@@ -2,41 +2,37 @@ package com.acleda.student.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Data;
-
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-@Data
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "created_by", updatable = false)
+    @CreatedBy
     @JsonIgnore
+    @Column(name = "created_by", updatable = false)
     private String createdBy;
 
-    @Column(name = "created_at", updatable = false)
-    @CreatedDate
+    // @CreatedDate
     @JsonIgnore
+    @Column(name = "created_at", insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_by", insertable = false)
+    @LastModifiedBy
     @JsonIgnore
+    @Column(name = "updated_by", insertable = false)
     private String updatedBy;
 
-    @Column(name = "updated_at", insertable = false)
     @LastModifiedDate
     @JsonIgnore
+    @Column(insertable = false)
     private LocalDateTime updatedAt;
 
 }

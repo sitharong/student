@@ -3,6 +3,7 @@ package com.acleda.student.config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,6 +22,7 @@ import com.acleda.student.jwt.JwtTokenValidator;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Optional;
 
 @Configuration
 @EnableWebSecurity
@@ -38,6 +40,13 @@ public class AppConfig {
 
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtTokenValidator jwtTokenValidator;
+
+    @Bean
+    public AuditorAware<String> auditorProvider() {
+        // return () ->
+        // Optional.of(SecurityContextHolder.getContext().getAuthentication().getName());
+        return () -> Optional.of("admin");
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

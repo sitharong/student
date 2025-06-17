@@ -24,3 +24,6 @@
 [2025-06-17 15:09:30] - INFO - com.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
 [2025-06-17 15:09:34] - INFO - com.acleda.student.StudentApplication - Started StudentApplication in 4.37 seconds (process running for 4.823)
 [2025-06-17 15:09:43] - INFO - com.acleda.student.controllers.StudentRestController - list students: [StudentModel(super=BaseModel(id=1552, createdBy=null, createdAt=null, updatedBy=null, updatedAt=null), name=S1, room=r1, email=s1r1@gmail.com), StudentModel(super=BaseModel(id=852, createdBy=null, createdAt=null, updatedBy=null, updatedAt=null), name=N852, room=R852, email=n852@gmail.com)]
+[2025-06-17 16:31:39] - INFO - com.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 3612 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+[2025-06-17 16:31:39] - INFO - com.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 16:31:43] - INFO - com.acleda.student.StudentApplication - Started StudentApplication in 4.371 seconds (process running for 4.837)
