@@ -1,0 +1,4 @@
+[2025-06-17 10:34:23] - INFO - com.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 3068 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+[2025-06-17 10:34:23] - INFO - com.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 10:34:27] - INFO - com.acleda.student.StudentApplication - Started StudentApplication in 4.52 seconds (process running for 5.002)
+[2025-06-17 10:34:32] - INFO - com.acleda.student.controllers.StudentRestController - helloWorld
