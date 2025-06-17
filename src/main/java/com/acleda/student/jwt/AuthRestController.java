@@ -3,8 +3,6 @@ package com.acleda.student.jwt;
 import lombok.RequiredArgsConstructor;
 
 import org.apache.coyote.BadRequestException;
-// import org.slf4j.Logger;
-// import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +25,6 @@ import java.util.Collection;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthRestController {
-
-    // private static final Logger log =
-    // LoggerFactory.getLogger(AuthRestController.class);
 
     @Autowired
     private UserRepository userRepository;

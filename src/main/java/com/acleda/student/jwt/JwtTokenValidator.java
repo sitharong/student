@@ -1,8 +1,6 @@
 package com.acleda.student.jwt;
 
 import com.acleda.student.utils.Constant;
-// import com.acledabank.student_management_api.exception.EmptyResponse;
-// import com.acledabank.student_management_api.util.ApiResponseUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -23,7 +21,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.crypto.SecretKey;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @Component
