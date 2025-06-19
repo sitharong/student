@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class StudentRestController {
 
     @Autowired
-    StudentService studentService;
+    private StudentService studentService;
 
     @GetMapping
     public String helloWorld() {
@@ -60,8 +60,9 @@ public class StudentRestController {
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    public void delete(@PathVariable Long id) {
+    public boolean delete(@PathVariable Long id) {
         studentService.deleteStudent(id);
         log.info("delete student {}", id);
+        return true;
     }
 }
