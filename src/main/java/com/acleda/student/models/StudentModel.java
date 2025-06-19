@@ -13,7 +13,6 @@ import lombok.Data;
 @Entity
 @Table(name = "tbl_student")
 @Data
-// @ToString(callSuper = true)
 public class StudentModel extends BaseModel {
 
     @Id
