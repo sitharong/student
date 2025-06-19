@@ -1,6 +1,7 @@
 package com.acleda.student.config;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,8 +22,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(s).body(e.getMessage());
     }
 
-    @ExceptionHandler
-    public Object methodArgumentNotValidException(MethodArgumentNotValidException e, HttpServletRequest request) {
+    @ExceptionHandler({ MethodArgumentNotValidException.class, ConstraintViolationException.class })
+    public Object httpStatus400(Exception e, HttpServletRequest request) {
         return handler(e, request, HttpStatus.BAD_REQUEST);
     }
 
