@@ -7,5 +7,4 @@ import com.acleda.student.models.StudentModel;
 
 @Repository
 public interface StudentRepository extends JpaRepository<StudentModel, Long> {
-
 }

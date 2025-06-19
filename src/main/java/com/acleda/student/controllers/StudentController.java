@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/api/v1/student")
 @Slf4j
-public class StudentRestController {
+public class StudentController {
 
     @Autowired
     private StudentService studentService;

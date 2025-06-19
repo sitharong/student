@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 
 @Slf4j
 @ControllerAdvice
-public class GlobalException {
+public class GlobalExceptionHandler {
 
     private Object handler(Exception e, HttpServletRequest request, HttpStatus s) {
         log.error("{} {} {} {} {}", s, request.getMethod(), request.getRequestURL(),
