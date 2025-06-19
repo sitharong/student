@@ -15,28 +15,29 @@ import java.util.NoSuchElementException;
 @ControllerAdvice
 public class GlobalException {
 
+    private Object handler(Exception e, HttpServletRequest request, HttpStatus s) {
+        log.error("{} {} {} {} {}", s, request.getMethod(), request.getRequestURL(),
+                e.getClass(), e.getMessage());
+        return ResponseEntity.status(s).body(e.getMessage());
+    }
+
     @ExceptionHandler
     public Object methodArgumentNotValidException(MethodArgumentNotValidException e, HttpServletRequest request) {
-        log.error("{} {} {} {}", HttpStatus.BAD_REQUEST, request.getMethod(), request.getRequestURL(), e.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        return handler(e, request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler
     public Object noSuchElementException(NoSuchElementException e, HttpServletRequest request) {
-        log.error("{} {} {} {}", HttpStatus.NOT_FOUND, request.getMethod(), request.getRequestURL(), e.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        return handler(e, request, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler
     public Object dataIntegrityViolationException(DataIntegrityViolationException e, HttpServletRequest request) {
-        log.error("{} {} {} {}", HttpStatus.CONFLICT, request.getMethod(), request.getRequestURL(), e.getMessage());
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        return handler(e, request, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler
     public Object exception(Exception e, HttpServletRequest request) {
-        log.error("{} {} {} {} {}", HttpStatus.INTERNAL_SERVER_ERROR, request.getMethod(), request.getRequestURL(),
-                e.getClass(), e.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        return handler(e, request, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
