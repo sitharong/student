@@ -32,16 +32,16 @@ public class StudentController {
     }
 
     @PostMapping(value = "/new")
-    public StudentModel add(@Valid @RequestBody StudentModel book) {
-        var res = studentService.addStudent(book);
-        log.info("add student: {}", res);
+    public StudentModel add(@Valid @RequestBody StudentModel data) {
+        var res = studentService.addStudent(data);
+        log.info("add student: {} <-> {}", data, res);
         return res;
     }
 
     @GetMapping(value = "/{id}")
     public StudentModel get(@PathVariable Long id) {
         var res = studentService.getStudent(id);
-        log.info("get student: {}", res);
+        log.info("get student {}: {}", id, res);
         return res;
     }
 
