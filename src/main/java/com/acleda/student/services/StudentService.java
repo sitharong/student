@@ -2,68 +2,45 @@ package com.acleda.student.services;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.acleda.student.repositories.StudentRepository;
 import com.acleda.student.models.StudentModel;
 
-@Service
-public class StudentService {
-
-    @Autowired
-    private StudentRepository studentRepository;
+public interface StudentService {
 
     /** list all students */
-    public List<StudentModel> listStudents() {
-        return studentRepository.findAll();
-    }
+    List<StudentModel> listStudents();
 
     /** create new student */
-    public StudentModel addStudent(StudentModel studentData) {
-        return studentRepository.save(studentData);
-    }
+    StudentModel addStudent(StudentModel studentData);
 
     /**
      * read student by id
      * 
      * @throws NoSuchElementException
      */
-    public StudentModel getStudent(Long id) {
-        return studentRepository.findById(id).get();
-    }
+    StudentModel getStudent(Long id);
 
     /**
      * update student
      * 
      * @throws NoSuchElementException
      */
-    public StudentModel updateStudent(StudentModel newStudentData) {
-        checkStudent(newStudentData.getId());
-        return studentRepository.save(newStudentData);
-    }
+    StudentModel updateStudent(StudentModel newStudentData);
 
     /**
      * delete student by id
      * 
      * @throws NoSuchElementException
      */
-    public void deleteStudent(Long id) {
-        checkStudent(id);
-        studentRepository.deleteById(id);
-    }
+    void deleteStudent(Long id);
 
     /** check if student exist */
-    public boolean hasStudent(Long id) {
-        return studentRepository.existsById(id);
-    }
+    boolean hasStudent(Long id);
 
     /**
      * ensure student exist
      * 
      * @throws NoSuchElementException
      */
-    private void checkStudent(Long id) {
-        if (!hasStudent(id))
-            throw new NoSuchElementException("Student " + id);
-    }
+    void checkStudent(Long id);
+
 }

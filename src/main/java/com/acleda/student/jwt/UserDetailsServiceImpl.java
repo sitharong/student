@@ -23,6 +23,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return new User(
                 user.getUsername(),
                 user.getPassword(),
-                Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole())));
+                Collections.singletonList(new SimpleGrantedAuthority(user.getRole())));
     }
 }
