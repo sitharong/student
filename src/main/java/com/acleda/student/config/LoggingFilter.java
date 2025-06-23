@@ -32,12 +32,14 @@ public class LoggingFilter extends OncePerRequestFilter {
         String requestBody = new String(wrappedRequest.getContentAsByteArray(), request.getCharacterEncoding());
         String responseBody = new String(wrappedResponse.getContentAsByteArray(), response.getCharacterEncoding());
 
-        if (HttpStatus.valueOf(response.getStatus()).isError()) {
+        HttpStatus status = HttpStatus.valueOf(response.getStatus());
+
+        if (status.isError()) {
             log.error("Request {} {} {}", request.getMethod(), request.getRequestURI(), requestBody);
-            log.error("Response {} {}", response.getStatus(), responseBody);
+            log.error("Response {} {}", status, responseBody);
         } else {
             log.info("Request {} {} {}", request.getMethod(), request.getRequestURI(), requestBody);
-            log.info("Response {} {}", response.getStatus(), responseBody);
+            log.info("Response {} {}", status, responseBody);
         }
 
         // Important: copy content of response back to the original response
