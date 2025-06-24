@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.acleda.student.models.ApiVendorResponseModel.ApiVendorNews;
+import com.acleda.student.response.ResponseModel;
+import com.acleda.student.response.ResponseService;
 import com.acleda.student.services.ApiVendorService;
 
 @RestController
@@ -15,8 +16,13 @@ public class ApiVendorController {
     @Autowired
     private ApiVendorService apiVendorService;
 
+    @Autowired
+    private ResponseService responseService;
+
     @GetMapping("/news")
-    public ApiVendorNews getNews() {
-        return apiVendorService.getNewsData();
+    public ResponseModel getNews() {
+        var res = apiVendorService.getNewsData();
+        return responseService.ok(res);
     }
+
 }
