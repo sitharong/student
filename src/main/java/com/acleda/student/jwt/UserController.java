@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserController {
@@ -12,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public String register(@RequestBody UserModel user) {
+    public String register(@Valid @RequestBody UserModel user) {
         if (userService.hasUsername(user.getUsername())) {
             return "Username already exists";
         }
@@ -21,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody UserModel user) {
+    public String login(@Valid @RequestBody UserModel user) {
         try {
             return userService.login(user);
         } catch (AuthenticationException e) {
