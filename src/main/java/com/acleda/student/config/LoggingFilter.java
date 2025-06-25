@@ -23,16 +23,23 @@ public class LoggingFilter extends OncePerRequestFilter {
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
 
+        // Wrap the request and response to allow multiple reads of their bodies
         ContentCachingRequestWrapper wrappedRequest = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper wrappedResponse = new ContentCachingResponseWrapper(response);
 
+        // Continue the filter chain with the wrapped request/response
         filterChain.doFilter(wrappedRequest, wrappedResponse);
 
+        // Read the request/response body from the cached wrapper
         String requestBody = new String(wrappedRequest.getContentAsByteArray(), request.getCharacterEncoding());
         String responseBody = new String(wrappedResponse.getContentAsByteArray(), response.getCharacterEncoding());
 
-        HttpStatus status = HttpStatus.valueOf(response.getStatus());
+        // Get the HTTP status of the response
+        HttpStatus status = HttpStatus.valueOf(wrappedResponse.getStatus());
 
+        // Log request and response based on status (error or not)
+        // NOTE: If you configure AsyncAppender in logback.xml, these log statements
+        // will be handled asynchronously
         if (status.isError()) {
             log.error("Request {} {} {}", request.getMethod(), request.getRequestURI(), requestBody);
             log.error("Response {} {}", status, responseBody);
@@ -41,7 +48,7 @@ public class LoggingFilter extends OncePerRequestFilter {
             log.info("Response {} {}", status, responseBody);
         }
 
-        // Important: copy content of response back to the original response
+        // Important: copy the cached response body back to the actual response
         wrappedResponse.copyBodyToResponse();
     }
 }

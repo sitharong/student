@@ -30,6 +30,14 @@
         </filter>
     </appender>
 
+    <!-- Async wrappers -->
+    <appender name="ASYNC_ERROR" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ERROR_FILE"/>
+    </appender>
+    <appender name="ASYNC_NON_ERROR" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="NON_ERROR_FILE"/>
+    </appender>
+
     <!-- Console log for everything -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -37,10 +45,10 @@
         </encoder>
     </appender>
 
-    <!-- Log only your application package (adjust the package name below) -->
+    <!-- Log only your application package -->
     <logger name="com.acleda.student" level="INFO" additivity="false">
-        <appender-ref ref="ERROR_FILE"/>
-        <appender-ref ref="NON_ERROR_FILE"/>
+        <appender-ref ref="ASYNC_ERROR"/>
+        <appender-ref ref="ASYNC_NON_ERROR"/>
     </logger>
 
     <root level="INFO">

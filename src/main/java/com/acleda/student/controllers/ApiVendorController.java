@@ -9,6 +9,9 @@ import com.acleda.student.response.ResponseModel;
 import com.acleda.student.response.ResponseService;
 import com.acleda.student.services.ApiVendorService;
 
+/**
+ * REST controller for handling API vendor-related endpoints.
+ */
 @RestController
 @RequestMapping("/api/v1/apivendor")
 public class ApiVendorController {
@@ -19,6 +22,11 @@ public class ApiVendorController {
     @Autowired
     private ResponseService responseService;
 
+    /**
+     * Retrieves news data from the API vendor service.
+     * 
+     * @return a ResponseModel containing the news data
+     */
     @GetMapping("/news")
     public ResponseModel getNews() {
         var res = apiVendorService.getNewsData();

@@ -12,22 +12,41 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Security configuration for the application.
+ * Configures JWT authentication, password encoding, and endpoint security.
+ */
 @Configuration
 public class SecurityConfig {
 
     @Autowired
     private JwtFilter jwtFilter;
 
+    /**
+     * Provides a BCrypt password encoder bean for hashing user passwords.
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Provides the authentication manager bean using the application's
+     * authentication configuration.
+     */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 
+    /**
+     * Configures the security filter chain:
+     * - Disables CSRF protection (not needed for stateless APIs).
+     * - Allows unauthenticated access to login and register endpoints.
+     * - Requires authentication for all other endpoints.
+     * - Sets session management to stateless (no HTTP session).
+     * - Adds the JwtFilter before the UsernamePasswordAuthenticationFilter.
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
