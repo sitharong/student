@@ -37,8 +37,8 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         var errors = e.getBindingResult().getFieldErrors().stream()
                 .collect(Collectors.toMap(
-                        ex -> ex.getField(),
-                        ex -> ex.getDefaultMessage(),
+                        fe -> fe.getField(),
+                        fe -> fe.getDefaultMessage(),
                         (msg1, msg2) -> msg1)); // In case of duplicate keys, keep the first message
         return handler(errors, HttpStatus.BAD_REQUEST);
     }
