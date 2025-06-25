@@ -1,0 +1,79 @@
+2025-06-20 15:12:57 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 12012 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-20 15:12:57 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 15:13:02 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 5.829 seconds (process running for 6.417)
+2025-06-20 15:13:15 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/user/login {
+	"username": "username3",
+    "password":"username3"
+}
+2025-06-20 15:13:15 INFO  c.a.student.config.LoggingFilter - Response 200 eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTMiLCJpYXQiOjE3NTA0MDcxOTUsImV4cCI6MTc1MDQxMDc5NX0.8c41iyOMYzzm9TX5LTQri526Wb-npR9NOlYodh1CgAI
+2025-06-20 15:13:29 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student 
+2025-06-20 15:13:29 INFO  c.a.student.config.LoggingFilter - Response 200 {"status":"OK","data":"Hello World","error":null}
+2025-06-20 15:14:20 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7r7@gmail.com"
+}
+2025-06-20 15:14:20 INFO  c.a.student.config.LoggingFilter - Response 200 {"status":"OK","data":{"id":23,"name":"S7","room":"r7","email":"ss7r7@gmail.com"},"error":null}
+2025-06-20 15:52:53 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 7304 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-20 15:52:53 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 15:52:58 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 6.269 seconds (process running for 6.851)
+2025-06-23 11:35:11 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 3824 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-23 11:35:11 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-23 13:09:30 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 3936 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-23 13:09:30 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-23 13:09:37 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 8.362 seconds (process running for 14.498)
+2025-06-23 13:16:07 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/user/login {
+	"username": "username3",
+    "password":"username3"
+}
+2025-06-23 13:16:07 INFO  c.a.student.config.LoggingFilter - Response 200 eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTMiLCJpYXQiOjE3NTA2NTkzNjcsImV4cCI6MTc1MDY2Mjk2N30.kP0F-U9Z390jl2OOldRugUEL7xNpEcPDNXp7_hr_peI
+2025-06-23 13:16:23 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student 
+2025-06-23 13:16:23 INFO  c.a.student.config.LoggingFilter - Response 200 {"status":"OK","data":"Hello World","error":null}
+2025-06-23 13:19:34 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 1664 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-23 13:19:34 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-23 13:19:40 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 6.557 seconds (process running for 7.259)
+2025-06-23 13:19:47 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/user/login {
+	"username": "username3",
+    "password":"username3"
+}
+2025-06-23 13:19:47 INFO  c.a.student.config.LoggingFilter - Response 200 OK eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTMiLCJpYXQiOjE3NTA2NTk1ODcsImV4cCI6MTc1MDY2MzE4N30.E8ikaZFXxkkV-O4_mKAts4im5OqjSiamPPd91lr_fJE
+2025-06-23 13:19:56 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student 
+2025-06-23 13:19:56 INFO  c.a.student.config.LoggingFilter - Response 200 OK {"status":"OK","data":"Hello World","error":null}
+2025-06-24 09:04:44 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 11784 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:04:44 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:06:09 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 13592 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:06:09 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:06:47 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 12728 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:06:47 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:07:52 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 4112 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:07:52 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:14:40 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 12028 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:14:40 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:17:09 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 12368 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:17:09 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:30:40 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 11784 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 09:30:40 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:30:46 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 6.908 seconds (process running for 7.698)
+2025-06-24 09:31:28 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/user/login {
+	"username": "username3",
+    "password":"username3"
+}
+2025-06-24 09:31:28 INFO  c.a.student.config.LoggingFilter - Response 200 OK eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTMiLCJpYXQiOjE3NTA3MzIyODgsImV4cCI6MTc1MDczNTg4OH0.Baa6ffeoj0M7flX4m5a78ONY3qyVJ5CYiqlS3_xxelU
+2025-06-24 09:31:37 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student 
+2025-06-24 09:31:37 INFO  c.a.student.config.LoggingFilter - Response 200 OK {"status":"OK","data":"Hello World","error":null}
+2025-06-24 09:31:58 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student/list 
+2025-06-24 09:31:58 INFO  c.a.student.config.LoggingFilter - Response 200 OK {"status":"OK","data":[{"id":3,"name":"S6","room":"r6","email":"s6r6@gmail.com"},{"id":1,"name":"N852","room":"R852","email":"n852@gmail.com"},{"id":6,"name":"S7","room":"r7","email":"s7r7@gmail.com"},{"id":11,"name":"S7","room":"r7","email":"s7rr7@gmail.com"},{"id":13,"name":"S7","room":"r7","email":"s7rrr7@gmail.com"},{"id":23,"name":"S7","room":"r7","email":"ss7r7@gmail.com"}],"error":null}
+2025-06-24 09:33:44 INFO  c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7rr7@gmail.com"
+}
+2025-06-24 09:33:44 INFO  c.a.student.config.LoggingFilter - Response 200 OK {"status":"OK","data":{"id":27,"name":"S7","room":"r7","email":"ss7rr7@gmail.com"},"error":null}
+2025-06-24 09:44:12 INFO  c.a.student.config.LoggingFilter - Request GET /api/v1/student/3 
+2025-06-24 09:44:12 INFO  c.a.student.config.LoggingFilter - Response 200 OK {"status":"OK","data":{"id":3,"name":"S6","room":"r6","email":"s6r6@gmail.com"},"error":null}
+2025-06-24 10:20:12 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 12636 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 10:20:12 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 10:20:18 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 6.587 seconds (process running for 7.264)
+2025-06-24 16:21:01 INFO  c.acleda.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 1472 (C:\Users\RongRong\Desktop\acleda\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\acleda\student)
+2025-06-24 16:21:01 INFO  c.acleda.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 16:21:07 INFO  c.acleda.student.StudentApplication - Started StudentApplication in 5.863 seconds (process running for 6.583)
