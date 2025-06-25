@@ -1,0 +1,36 @@
+2025-06-20 15:13:39 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"s7rrr7@gmail.com"
+}
+2025-06-20 15:13:39 ERROR c.a.student.config.LoggingFilter - Response 409 {"status":"CONFLICT","data":null,"error":"could not execute statement [ERROR: duplicate key value violates unique constraint \"ukav9smssi8vwt023x4rl5bvtxt\"\n  Detail: Key (email)=(s7rrr7@gmail.com) already exists.] [insert into tbl_student (created_by,email,name,room) values (?,?,?,?)]; SQL [insert into tbl_student (created_by,email,name,room) values (?,?,?,?)]; constraint [ukav9smssi8vwt023x4rl5bvtxt]"}
+2025-06-23 13:16:31 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7r7@gmail.com"
+}
+2025-06-23 13:16:31 ERROR c.a.student.config.LoggingFilter - Response 409 {"status":"CONFLICT","data":null,"error":"ERROR: duplicate key value violates unique constraint \"ukav9smssi8vwt023x4rl5bvtxt\"\n  Detail: Key (email)=(ss7r7@gmail.com) already exists."}
+2025-06-23 13:20:06 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7r7@gmail.com"
+}
+2025-06-23 13:20:06 ERROR c.a.student.config.LoggingFilter - Response 409 CONFLICT {"status":"CONFLICT","data":null,"error":"ERROR: duplicate key value violates unique constraint \"ukav9smssi8vwt023x4rl5bvtxt\"\n  Detail: Key (email)=(ss7r7@gmail.com) already exists."}
+2025-06-24 09:32:47 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7r7@gmail.com"
+}
+2025-06-24 09:32:47 ERROR c.a.student.config.LoggingFilter - Response 409 CONFLICT {"status":"CONFLICT","data":null,"error":"ERROR: duplicate key value violates unique constraint \"ukav9smssi8vwt023x4rl5bvtxt\"\n  Detail: Key (email)=(ss7r7@gmail.com) already exists."}
+2025-06-24 09:36:25 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	"name": "S7",
+    "room":"r7",
+    "email":"ss7rr7@gmail.com"
+}
+2025-06-24 09:36:25 ERROR c.a.student.config.LoggingFilter - Response 409 CONFLICT {"status":"CONFLICT","data":null,"error":"ERROR: duplicate key value violates unique constraint \"ukav9smssi8vwt023x4rl5bvtxt\"\n  Detail: Key (email)=(ss7rr7@gmail.com) already exists."}
+2025-06-24 09:37:17 ERROR c.a.student.config.LoggingFilter - Request POST /api/v1/student/new {
+	
+    "room":"r7",
+    "email":"ss7rr7@gmail.com"
+}
+2025-06-24 09:37:17 ERROR c.a.student.config.LoggingFilter - Response 400 BAD_REQUEST {"status":"BAD_REQUEST","data":null,"error":["name must not be blank"]}
