@@ -1,4 +1,4 @@
-package com.rupp.student.core.jwt;
+package com.rupp.student.core.user;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class UserController {
      * @return a message indicating success or if the username already exists
      */
     @PostMapping("/register")
-    public String register(@Valid @RequestBody UserModel user) {
+    public String register(@Valid @RequestBody UserEntity user) {
         if (userService.hasUsername(user.getUsername())) {
             return "Username already exists";
         }
@@ -38,7 +38,7 @@ public class UserController {
      * @return the JWT token or an error message if authentication fails
      */
     @PostMapping("/login")
-    public String login(@Valid @RequestBody UserModel user) {
+    public String login(@Valid @RequestBody UserEntity user) {
         try {
             return userService.login(user);
         } catch (AuthenticationException e) {

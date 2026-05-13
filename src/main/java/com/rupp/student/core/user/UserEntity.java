@@ -1,4 +1,4 @@
-package com.rupp.student.core.jwt;
+package com.rupp.student.core.user;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(name = "tbl_user")
 @Getter
 @Setter
-public class UserModel {
+public class UserEntity {
     /** Primary key, auto-generated. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

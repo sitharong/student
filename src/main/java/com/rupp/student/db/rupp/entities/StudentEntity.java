@@ -1,6 +1,6 @@
 package com.rupp.student.db.rupp.entities;
 
-import com.rupp.student.app.models.BaseModel;
+import com.rupp.student.app.models.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +22,7 @@ import lombok.Setter;
 @Table(name = "tbl_student")
 @Getter
 @Setter
-public class StudentEntity extends BaseModel {
+public class StudentEntity extends BaseEntity {
     /** Primary key, auto-generated. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
