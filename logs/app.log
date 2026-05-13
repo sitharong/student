@@ -24,3 +24,6 @@
 2026-05-13 14:08:54 INFO  com.rupp.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 16420 (C:\Users\RongRong\Desktop\doc\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\doc\student)
 2026-05-13 14:08:54 INFO  com.rupp.student.StudentApplication - No active profile set, falling back to 1 default profile: "default"
 2026-05-13 14:09:00 INFO  com.rupp.student.StudentApplication - Started StudentApplication in 6.058 seconds (process running for 6.947)
+2026-05-13 15:06:35 INFO  com.rupp.student.StudentApplication - Starting StudentApplication using Java 21.0.6 with PID 7032 (C:\Users\RongRong\Desktop\doc\student\target\classes started by RongRong in C:\Users\RongRong\Desktop\doc\student)
+2026-05-13 15:06:35 INFO  com.rupp.student.StudentApplication - The following 3 profiles are active: "global", "dev-db", "dev"
+2026-05-13 15:06:40 INFO  com.rupp.student.StudentApplication - Started StudentApplication in 5.571 seconds (process running for 6.505)
