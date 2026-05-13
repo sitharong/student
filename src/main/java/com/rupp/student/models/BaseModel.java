@@ -19,7 +19,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
-
     /** Username of the user who created the entity. */
     @CreatedBy
     @JsonIgnore
@@ -43,5 +42,4 @@ public class BaseModel {
     @JsonIgnore
     @Column(insertable = false)
     private LocalDateTime updatedAt;
-
 }

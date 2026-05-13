@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ResponseService {
-
     /**
      * Creates a successful response with HTTP 200 OK status.
      * 

@@ -1,17 +1,15 @@
 package com.rupp.student.jwt;
 
 public interface UserService {
-
     /** check if username exist */
-    public boolean hasUsername(String username);
+    boolean hasUsername(String username);
 
     /** get username */
-    public String getUsername();
+    String getUsername();
 
     /** save user */
-    public void saveUser(UserModel user);
+    void saveUser(UserModel user);
 
     /** login user */
-    public String login(UserModel user);
-
+    String login(UserModel user);
 }

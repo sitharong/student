@@ -46,7 +46,7 @@
     </appender>
 
     <!-- Log only your application package -->
-    <logger name="com.acleda.student" level="INFO" additivity="false">
+    <logger name="com.rupp.student" level="INFO" additivity="false">
         <appender-ref ref="ASYNC_ERROR"/>
         <appender-ref ref="ASYNC_NON_ERROR"/>
     </logger>

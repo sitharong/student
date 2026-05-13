@@ -1,17 +1,17 @@
 package com.rupp.student.services.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.rupp.student.models.ApiVendorResponseModel.ApiVendorNews;
 import com.rupp.student.services.ApiVendorService;
 
-@Service
-public class ApiVendorServiceImpl implements ApiVendorService {
+import lombok.RequiredArgsConstructor;
 
-    @Autowired
-    private WebClient webClient;
+@Service
+@RequiredArgsConstructor
+public class ApiVendorServiceImpl implements ApiVendorService {
+    private final WebClient webClient;
 
     public ApiVendorNews getNewsData() {
         return webClient.get()
@@ -20,5 +20,4 @@ public class ApiVendorServiceImpl implements ApiVendorService {
                 .bodyToMono(ApiVendorNews.class)
                 .block(); // For synchronous call, use .block()
     }
-
 }

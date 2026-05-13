@@ -6,7 +6,6 @@ import java.util.NoSuchElementException;
 import com.rupp.student.models.StudentModel;
 
 public interface StudentService {
-
     /** list all students */
     List<StudentModel> listStudents();
 
@@ -43,5 +42,4 @@ public interface StudentService {
      * @throws NoSuchElementException
      */
     void checkStudent(Long id);
-
 }

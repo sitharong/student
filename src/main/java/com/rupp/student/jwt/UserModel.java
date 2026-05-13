@@ -2,7 +2,8 @@ package com.rupp.student.jwt;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Entity representing a user in the system.
@@ -10,7 +11,8 @@ import lombok.Data;
  */
 @Entity
 @Table(name = "tbl_user")
-@Data
+@Getter
+@Setter
 public class UserModel {
     /** Primary key, auto-generated. */
     @Id
@@ -31,5 +33,4 @@ public class UserModel {
     @NotBlank
     @Column(nullable = false)
     private String role;
-
 }

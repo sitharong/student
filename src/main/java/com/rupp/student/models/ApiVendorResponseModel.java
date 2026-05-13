@@ -5,7 +5,6 @@ package com.rupp.student.models;
  * Can be used to group different response record types from external APIs.
  */
 public interface ApiVendorResponseModel {
-
     /**
      * Record representing news data from the API vendor.
      * 
@@ -16,5 +15,4 @@ public interface ApiVendorResponseModel {
      */
     public record ApiVendorNews(int userId, int id, String title, String body) {
     }
-
 }

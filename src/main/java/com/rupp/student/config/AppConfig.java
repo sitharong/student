@@ -16,13 +16,12 @@ import java.util.Optional;
 @Configuration
 @EnableWebSecurity
 public class AppConfig {
-
     /**
      * Provides the current auditor (username) for JPA auditing.
      * Uses the authenticated user's name from the security context.
      */
     @Bean
-    public AuditorAware<String> auditorProvider() {
+    AuditorAware<String> auditorProvider() {
         return () -> Optional.of(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
@@ -30,8 +29,7 @@ public class AppConfig {
      * Provides a singleton WebClient bean for making HTTP requests.
      */
     @Bean
-    public WebClient webClient() {
+    WebClient webClient() {
         return WebClient.create();
     }
-
 }

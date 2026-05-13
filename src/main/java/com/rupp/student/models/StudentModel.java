@@ -8,7 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Entity representing a student.
@@ -17,9 +18,9 @@ import lombok.Data;
  */
 @Entity
 @Table(name = "tbl_student")
-@Data
+@Getter
+@Setter
 public class StudentModel extends BaseModel {
-
     /** Primary key, auto-generated. */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,5 +41,4 @@ public class StudentModel extends BaseModel {
     @Email
     @Column(unique = true)
     private String email;
-
 }

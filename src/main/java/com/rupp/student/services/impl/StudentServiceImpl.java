@@ -2,18 +2,18 @@ package com.rupp.student.services.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rupp.student.models.StudentModel;
 import com.rupp.student.repositories.StudentRepository;
 import com.rupp.student.services.StudentService;
 
-@Service
-public class StudentServiceImpl implements StudentService {
+import lombok.RequiredArgsConstructor;
 
-    @Autowired
-    private StudentRepository studentRepository;
+@Service
+@RequiredArgsConstructor
+public class StudentServiceImpl implements StudentService {
+    private final StudentRepository studentRepository;
 
     /** list all students */
     public List<StudentModel> listStudents() {
@@ -68,5 +68,4 @@ public class StudentServiceImpl implements StudentService {
         if (!hasStudent(id))
             throw new NoSuchElementException("Student " + id);
     }
-
 }

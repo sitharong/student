@@ -1,8 +1,8 @@
 package com.rupp.student.config;
 
 import jakarta.validation.ConstraintViolationException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +18,9 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @ControllerAdvice
+@RequiredArgsConstructor
 public class GlobalExceptionHandler {
-
-    @Autowired
-    private ResponseService responseService;
+    private final ResponseService responseService;
 
     /**
      * Utility method to build a consistent error response using ResponseService.
