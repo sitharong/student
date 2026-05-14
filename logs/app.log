@@ -1,0 +1,6 @@
+2026-05-14 01:35:36 INFO  com.rupp.school.Main - Starting Main using Java 21.0.6 with PID 18388 (C:\Users\RongRong\Desktop\doc\school\target\classes started by RongRong in C:\Users\RongRong\Desktop\doc\school)
+2026-05-14 01:35:36 INFO  com.rupp.school.Main - The following 3 profiles are active: "global", "dev-db", "dev"
+2026-05-14 01:35:43 INFO  com.rupp.school.Main - Started Main in 7.984 seconds (process running for 8.967)
+2026-05-14 12:27:52 INFO  com.rupp.school.Main - Starting Main using Java 21.0.6 with PID 16060 (C:\Users\RongRong\Desktop\doc\school\target\classes started by RongRong in C:\Users\RongRong\Desktop\doc\school)
+2026-05-14 12:27:52 INFO  com.rupp.school.Main - The following 3 profiles are active: "global", "dev-db", "dev"
+2026-05-14 12:27:57 INFO  com.rupp.school.Main - Started Main in 5.667 seconds (process running for 6.579)

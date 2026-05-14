@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
      * Utility method to build a consistent error response using ResponseService.
      */
     private ResponseEntity<Object> handler(Object error, HttpStatus status) {
-        return ResponseEntity.status(status).body(responseService.error(error, status));
+        return ResponseEntity.status(status).body(responseService.error(status, error));
     }
 
     /**

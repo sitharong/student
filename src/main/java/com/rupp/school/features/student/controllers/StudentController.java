@@ -3,7 +3,6 @@ package com.rupp.school.features.student.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rupp.school.app.models.ResponseModel;
 import com.rupp.school.app.services.ResponseService;
 import com.rupp.school.db.rupp.entities.StudentEntity;
 import com.rupp.school.features.student.services.StudentService;
@@ -31,8 +30,8 @@ public class StudentController {
 
     /** Simple endpoint for testing. */
     @GetMapping
-    public ResponseModel helloWorld() {
-        return responseService.ok("Student API is working!");
+    public String helloWorld() {
+        return responseService.success("Student API is working!");
     }
 
     /**
@@ -42,9 +41,9 @@ public class StudentController {
      * @return the added student wrapped in a response
      */
     @PostMapping("/new")
-    public ResponseModel add(@Valid @RequestBody StudentEntity data) {
+    public String add(@Valid @RequestBody StudentEntity data) {
         var res = studentService.addStudent(data);
-        return responseService.ok(res);
+        return responseService.success(res);
     }
 
     /**
@@ -54,9 +53,9 @@ public class StudentController {
      * @return the student data wrapped in a response
      */
     @GetMapping("/{id}")
-    public ResponseModel get(@PathVariable Long id) {
+    public String get(@PathVariable Long id) {
         var res = studentService.getStudent(id);
-        return responseService.ok(res);
+        return responseService.success(res);
     }
 
     /**
@@ -65,9 +64,9 @@ public class StudentController {
      * @return a list of students wrapped in a response
      */
     @GetMapping("/list")
-    public ResponseModel list() {
+    public String list() {
         var res = studentService.listStudents();
-        return responseService.ok(res);
+        return responseService.success(res);
     }
 
     /**
@@ -77,9 +76,9 @@ public class StudentController {
      * @return the updated student wrapped in a response
      */
     @PutMapping("/update")
-    public ResponseModel update(@Valid @RequestBody StudentEntity newData) {
+    public String update(@Valid @RequestBody StudentEntity newData) {
         var res = studentService.updateStudent(newData);
-        return responseService.ok(res);
+        return responseService.success(res);
     }
 
     /**
@@ -89,8 +88,8 @@ public class StudentController {
      * @return a success response
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseModel delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id) {
         studentService.deleteStudent(id);
-        return responseService.ok(true);
+        return responseService.success(true);
     }
 }

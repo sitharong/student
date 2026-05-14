@@ -3,7 +3,7 @@ package com.rupp.school.features.vendor.services.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.rupp.school.app.models.ApiVendorResponseModel.ApiVendorNews;
+import com.rupp.school.core.models.ApiVendorResponseModel.ApiVendorNews;
 import com.rupp.school.features.vendor.services.ApiVendorService;
 
 import lombok.RequiredArgsConstructor;

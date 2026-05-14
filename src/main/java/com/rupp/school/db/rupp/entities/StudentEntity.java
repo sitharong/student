@@ -1,6 +1,6 @@
 package com.rupp.school.db.rupp.entities;
 
-import com.rupp.school.app.models.BaseEntity;
+import com.rupp.school.core.models.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

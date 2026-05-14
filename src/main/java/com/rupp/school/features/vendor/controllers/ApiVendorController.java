@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rupp.school.app.models.ResponseModel;
 import com.rupp.school.app.services.ResponseService;
 import com.rupp.school.features.vendor.services.ApiVendorService;
 
@@ -26,8 +25,8 @@ public class ApiVendorController {
      * @return a ResponseModel containing the news data
      */
     @GetMapping("/news")
-    public ResponseModel getNews() {
+    public String getNews() {
         var res = apiVendorService.getNewsData();
-        return responseService.ok(res);
+        return responseService.success(res);
     }
 }

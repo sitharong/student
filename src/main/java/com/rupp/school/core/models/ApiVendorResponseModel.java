@@ -1,4 +1,4 @@
-package com.rupp.school.app.models;
+package com.rupp.school.core.models;
 
 /**
  * Marker interface for API vendor response models.

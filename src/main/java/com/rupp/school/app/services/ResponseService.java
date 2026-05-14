@@ -3,7 +3,11 @@ package com.rupp.school.app.services;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.rupp.school.app.models.ResponseModel;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rupp.school.core.models.ResponseModel;
+
+import lombok.RequiredArgsConstructor;
 
 /**
  * Service for building standardized API response models.
@@ -11,29 +15,29 @@ import com.rupp.school.app.models.ResponseModel;
  * using the ResponseModel record.
  */
 @Service
+@RequiredArgsConstructor
 public class ResponseService {
-    /**
-     * Creates a successful response with HTTP 200 OK status.
-     * 
-     * @param data the response data to include
-     * @return a ResponseModel with status OK and the provided data
-     */
-    public ResponseModel ok(Object data) {
-        return new ResponseModel(HttpStatus.OK, data, null);
+    private final ObjectMapper mapper;
+
+    private String serialize(ResponseModel res) {
+        try {
+            return mapper.writeValueAsString(res);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
-    /**
-     * Creates an error response with the specified HTTP status.
-     * 
-     * @param error  the error details to include
-     * @param status the HTTP status to set for the response
-     * @return a ResponseModel with the given status and error
-     */
-    public ResponseModel error(Object error, HttpStatus status) {
-        return new ResponseModel(status, null, error);
+    public String success(Object data) {
+        return success(data, "");
     }
 
+    public String success(Object data, String msg) {
+        var res = new ResponseModel(HttpStatus.OK, true, msg, data);
+        return serialize(res);
+    }
+
+    public String error(HttpStatus status, Object error) {
+        var res = new ResponseModel(status, false, error.toString(), null);
+        return serialize(res);
+    }
 }
-// This service class provides a method to create a successful response model.
-// It uses the `ResponseModel` class to encapsulate the response data and
-// status.

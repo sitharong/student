@@ -1,4 +1,4 @@
-package com.rupp.school.app.models;
+package com.rupp.school.core.models;
 
 import org.springframework.http.HttpStatus;
 
@@ -11,8 +11,8 @@ import org.springframework.http.HttpStatus;
  * @param data   the response data (can be any object)
  * @param error  the error details (can be any object, or null if no error)
  */
-public record ResponseModel(HttpStatus status, Object data, Object error) {
+public record ResponseModel(HttpStatus status, boolean isSuccess, String msg, Object data) {
 }
 // This class is a model for responses, typically used in REST APIs.
-// It contains fields for status, data, and error, which can be used to
-// standardize the structure of responses sent back to clients.
+// It contains fields for status, isSuccess, data, and error, which can be used
+// to standardize the structure of responses sent back to clients.
